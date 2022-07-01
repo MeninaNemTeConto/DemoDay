@@ -1,6 +1,7 @@
+
 <!--Header-->
 <div align="center"> 
-  <img src="menina_nem_te_conto_tipo_outline.png" height="350">
+  <img src="imagensMenina/menina_nem_te_conto_tipo_outline.png" height="350">
   <br>
   <br>
     <img src="https://readme-typing-svg.herokuapp.com?size=35&duration=6000&color=F7F7F7&center=true&vCenter=true&width=450&lines=Menina%2C+nem+te+conto!">
@@ -8,6 +9,7 @@
 <div align="center">
   <p>Nosso principal objetivo é trazer mais visibilidade para mulheres empreendedoras, mas não só isso, ser também uma rede de apoio e solidariedade para nossas usuárias.</p>
 </div>
+
 
 <br>
 
@@ -27,28 +29,28 @@
 <div>
 	<h2> :family_woman_woman_girl_girl: Nossa equipe </h2>
 	<div align="center">
-		<a href="https://www.linkedin.com/in/camily-vit%C3%B3ria/" target="_blank"><img src="Camilly.png" height="180"></a>
-		<a href="https://www.linkedin.com/in/giullia-maria/" target="_blank"><img src="Giu.png" height="180"></a>
-		<a href="https://www.linkedin.com/in/diego-ssantos/" target="_blank"><img src="Didi.png" height="180"></a>
-		<a href="https://www.linkedin.com/in/matheus-silverio-silva/" target="_blank"><img src="Matheus.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/camily-vit%C3%B3ria/" target="_blank"><img src="imagensMenina/Camilly.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/giullia-maria/" target="_blank"><img src="imagensMenina/Giu.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/diego-ssantos/" target="_blank"><img src="imagensMenina/Didi.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/matheus-silverio-silva/" target="_blank"><img src="imagensMenina/Matheus.png" height="180"></a>
 	</div>
 	<br>
 	<div align="center">
-		<a href="https://www.linkedin.com/in/igor-viana-da-silva-839586234/" target="_blank"><img src="Igor.png" height="180"></a>
-		<a href="https://www.linkedin.com/in/henriquesaraujo/" target="_blank"><img src="Henrique.png" height="180"></a>
-		<a href="https://www.linkedin.com/in/lucaswaldes/" target="_blank"><img src="Lucas.png" height="180"></a>
-		<a href="https://www.linkedin.com/in/pedro-henrique-541b221b9/" target="_blank"><img src="Pedro.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/igor-viana-da-silva-839586234/" target="_blank"><img src="imagensMenina/Igor.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/henriquesaraujo/" target="_blank"><img src="imagensMenina/Henrique.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/lucaswaldes/" target="_blank"><img src="imagensMenina/Lucas.png" height="180"></a>
+		<a href="https://www.linkedin.com/in/pedro-henrique-541b221b9/" target="_blank"><img src="imagensMenina/Pedro.png" height="180"></a>
 	</div>
-	
+
 </div>
 
 <br>
 
 <!-- Tecnologias -->
 <div> 
-	
-	
-	
+
+​	
+​	
 </div>
 
 <div>
@@ -66,3 +68,6 @@
 	<h3> :star2: Banco de Dados :star2:</h3>
 	<img height="65" src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg">
   </div>
+  
+
+  
