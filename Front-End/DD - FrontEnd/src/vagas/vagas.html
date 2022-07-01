@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Início</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/resize.css">
+</head>
+
+<body class="scroll">
+    <!-- NavBar -->
+    <nav class="conteiner col-12 d-flex flex-row justify-content-between align-items-center m-0 my-3 p-3 px-sm-5">
+        <a class="" href="#sidebar" id="hamburguer-menu" data-bs-toggle="offcanvas" role="button"
+            aria-controls="sidebar">
+            <img class="col-sm-1 col-4 general_icon" src="../../assets/menu-hamburguer.png" alt="hamburguer-menu">
+        </a>
+        <a class="" href="" id="logo">
+            <img class="col-sm-2 col-4 logo" src="../../assets/Logo_Roxa.png" alt="Logo">
+        </a>
+        <div class=" d-flex flex-row justify-content-between gap-5 align-items-center">
+            <a href="" id="search-btn" class="d-none d-sm-block search_btn_closed">
+                <img class="col-sm-2 general_icon" src="../../assets/pesquisar.png" alt="Search">
+            </a>
+            <a href="../login/pre-cadastro.html" id="user">
+                <img class="col-sm-1 col-4 general_icon" src="../../assets/usuario.png" alt="user">
+            </a>
+        </div>
+    </nav>
+    <!-- SideBar/Menu Hamburguer -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar_label">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close d-flex ms-auto" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li class="my-3"><a href="#" class="fs-3 general_link">Início</a></li>
+                <!-- Botão com dropdown para secção dos perfis -->
+                <li class="my-3">
+                    <button class="fs-3 general_link border-0 bg-transparent" type="button"
+                        data-bs-target="#perfil_dropdownCollapse" data-bs-toggle="collapse" aria-expanded="false"
+                        aria-controls="perfil_dropdownCollapse">
+                        <span class="dropdown-toggle d-flex flex-row-reverse align-items-center"><span class="ms-3">Perfil</span></span>
+                    </button>
+                    <!-- Submenus do perfil -->
+                    <div class="collapse" id="perfil_dropdownCollapse">
+                        <ul style="list-style-type: none; margin-left: 1rem;">
+                            <li class="my-2"><a href="../../src/perfil_inicio/perfil_inicio.html" class="fs-5 general_link">Home</a></li>
+                            <li class="my-2"><a href="../../src/perfil_projetos/perfil_projetos.html" class="fs-5 general_link">Projetos</a></li>
+                            <li class="my-2"><a href="../../src/perfil_privacidade/perfil_privacidade.html"class="fs-5 general_link">Privacidade</a></li>
+                            <li class="my-2"><a href="../../src/perfil_suporte/perfil_suporte.html" class="fs-5 general_link">Suporte</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="my-3"><a href="../../src/cursos/cursos.html" class="fs-3 general_link">Cursos</a></li>
+                <li class="my-3"><a href="../../src/vagas/vagas.html" class="fs-3 general_link">Vagas</a></li>
+                <li class="my-3"><a href="../mapaDeIniciativas/index.html" class="fs-3 general_link">Mapa de Iniciativas</a></li>
+            </ul>
+            <hr style="margin-top: 95%;">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html" class="general_link">Termos de
+                        Uso</a></li>
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html " class="general_link">Políticas
+                        de Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Delimitação do conteúdo principal -->
+    <div class="conteiner">
+        <!-- Filtros -->
+        <form action="" method="" id="job_filter" class="row d-flex flex-column flex-sm-row justify-content-sm-between justify-content-center align-items-sm-start align-items-center ms-5 mb-5">
+            <div class="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center align-items-md-start">
+                <div class="row col-8 col-lg-5 d-flex flex-column flex-md-row align-items-center align-items-md-start">
+                    <!-- ordenar por -->
+                    <div class="col-12 col-sm-8 col-md-5 col-xl-6">
+                        <label for="order" class="subtitle fs-5 text-nowrap">Ordenar Por:</label>
+                        <button name="order" class="d-flex justify-content-end col-12 btn border border-2" type="button" data-bs-toggle="collapse" data-bs-target=".collapse1" aria-expanded="false" aria-controls="collapse1">
+                            <img src="../../assets/dropdown.png" alt="dropdown">
+                        </button>
+                        <div class="collapse collapse1 border border-2 rounded-2 mt-2">
+                            <button form="job_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                                Data de Publicação
+                            </button>
+                            <button form="job_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                                Proximidade
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tipos de anúncio -->
+                    <div class="col-12 col-sm-8 col-md-5 col-xl-6">
+                        <label for="ad_type" class="subtitle fs-5 text-nowrap">Tipos de Anúncio:</label>
+                        <button name="ad_type" class="d-flex justify-content-end col-12 btn border border-2" type="button" data-bs-toggle="collapse" data-bs-target=".collapse2" aria-expanded="false" aria-controls="collapse2">
+                            <img src="../../assets/dropdown.png" alt="dropdown">
+                        </button>
+                        <div class="collapse collapse2 border border-2 rounded-2 mt-2">
+                            <button form="jobs_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                                Presencial
+                            </button>
+                            <button form="jobs_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                                Pela Internet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- filtrar -->
+                <div class="d-flex flex-column col-4 justify-content-center align-items-center">
+                    <label for="filter">Filtrar:</label>
+                    <button class="border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter_sidebar" aria-controls="filter_sidebar">
+                        <img src="../../assets/filtro.png" alt="filtro" class="col-6">
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="filter_sidebar">
+                        <div class="offcanvas-header">
+                            <h2 class="offcanvas-title">Categorias:</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <form action="" id="job_categories">
+                                <!-- Tipo -->
+                                <h4 class="subtitle">Tipo:</h4>
+                                <div class="d-flex flex-column ms-4 my-3">
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_culinaria" id="jobtype_culinaria">
+                                        <label for="jobtype_culinaria">Culinária</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_artesanato" id="jobtype_artesanato">
+                                        <label for="jobtype_artesanato">Artesanato</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_serviçosdomiciliares" id="jobtype_domiciliar">
+                                        <label for="jobtype_domiciliar">Serviços Domiciliares</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_TIeAssistencia" id="jobtype_ti">
+                                        <label for="jobtype_ti">TI e Assistência Técnica</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_ServiçosEmpresariais" id="jobtype_empresarial">
+                                        <label for="jobtype_empresarial">Serviços Empresariais</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_GestãoPessoal" id="jobtype_gestpessoal">
+                                        <label for="jobtype_gestpessoal">Gestão Pessoal</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="tipodetrabalho_Eventos" id="jobtype_eventos">
+                                        <label for="jobtype_eventos">Eventos</label>
+                                    </div>
+                                </div>
+                                <!-- Tipo de pagamento -->
+                                <h4 class="subtitle">Forma de Pagamento:</h4>
+                                <div class="d-flex flex-column ms-4 my-3">
+                                    <div>
+                                        <input type="checkbox" name="valorHr" id="jobpaymentmethod_hr">
+                                        <label for="jobpaymentmethod_hr">R$/Hr</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="valorFixo" id="jobpaymentmethod_fixo">
+                                        <label for="jobpaymentmethod_fixo">Valor Fixo</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="valorCombinar" id="jobpaymentmethod_combinar">
+                                        <label for="jobpaymentmethod_combinar">À Combinar</label>
+                                    </div>
+                                </div>
+                                <!-- Disponibilidade -->
+                                <h4 class="subtitle">Disponibilidade:</h4>
+                                <div class="d-flex flex-column ms-4 my-3">
+                                    <div>
+                                        <input type="checkbox" name="disponibilidadeRemoto" id="disponibility_remoto">
+                                        <label for="disponibility_remoto">Trabalho Remoto</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="disponibilidadeLocal" id="disponibility_local">
+                                        <label for="disponibility_local">Ir no Local</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="disponibilidadeCombinar" id="disponibility_combinar">
+                                        <label for="disponibility_combinar">À Combinar</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Cards - Max 8 por pag -->
+        <div class="row d-flex flex-column justify-content-center align-items-center gap-5">
+            <!-- Card 1 -->
+            <div class="d-flex flex-column flex-sm-row justify-content-around align-items-center col-12 col-xl-6 border rounded-4 pe-0">
+                <!-- imagens -->
+                <div id="carouselcontrols1" class="carousel carousel-dark slide col-12 col-sm-6 col-lg-5" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../../assets/ar_condicionado_consertar.jpeg" class="d-block col-12 rounded-4 my-3" style="min-height: 13rem;" alt="placeholder">
+                        </div>
+                        <!-- 
+                        <div class="carousel-item">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12 rounded-4 my-3" alt="placeholder">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12 rounded-4 my-3" alt="placeholder">
+                        </div>
+                        -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselcontrols1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselcontrols1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Imagens fim -->
+                <!-- Info do card -->
+                <a href="../vaga_foco/vaga_foco.html" class="text-decoration-none" id="jobcard_info">
+                    <h1 id="card_title" class="subtitle p-4 text-center fs-2">Preciso de um conserto de ar condicionado</h1>
+                    <p class="ms-3 fw-bold text-black">Localização: <span id="card_local" class="text-black-50">São Paulo - SP</span></p>
+                    <p class="ms-3 fw-bold text-black">Quem postou: <span id="card_author" class="text-black-50">Marcelo Gonçalves Da Silva</span></p>
+                    <p class="ms-3 fw-bold text-black">Valor: <span id="card_payment" class="text-black-50">50,00 R$/Hr</span></p>
+                    <p class="ms-3 fw-bold text-black">Prazo: <span id="card_deadline" class="text-black-50">3 dias</span></p>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- nav entre paginas
+        <div class="mt-5">
+            <nav class="d-flex justify-content-center" aria-label="Page navigation example">
+                <ul class="row pagination justify-content-around align-items-center gap-2" id="pagenavigation_links">
+                    <li class="page-item col-2"><a class="page-link d-flex rounded-pill text-black align-items-center justify-content-center border-1" style="width: 3rem; height: 3rem;" id="pagenavlink_1" href="../../src/vagas/vagas.html">1</a></li>
+                    <li class="page-item col-2"><a class="page-link d-flex rounded-pill text-black align-items-center justify-content-center border-1" style="width: 3rem; height: 3rem;" id="pagenavlink_2" href="#">2</a></li>
+                    <li class="page-item col-2"><a class="page-link d-flex rounded-pill text-black align-items-center justify-content-center border-1" style="width: 3rem; height: 3rem;" id="pagenavlink_3" href="#">3</a></li>
+                </ul>
+            </nav>
+        </div>
+        -->
+        <!-- Botão Criar Serviço -->
+        <div class="sticky-bottom row justify-content-center" style="bottom: 1rem;">
+            <a href="#" class="col-5 col-sm-3 col-lg-2 general_button text-center py-3 rounded-pill text-decoration-none">
+                <span class="">Criar Serviço</span>
+            </a>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="conteiner col-12 d-flex flex-row justify-content-around align-items-center my-5">
+        <div class="row d-flex flex-column flex-md-row align-items-center">
+            <div class="col-6 col-md-4 offset-1 offset-md-0">
+                <div class="">
+                    <h4 class="subtitle">Links Rápidos: </h4>
+                    <ul class="" id="footerlinks">
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Termos de Uso</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Políticas de Privacidade</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/vagas/vagas.html">
+                            <li>Encontre Trabalho</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/cursos/cursos.html">
+                            <li>Cursos</li>
+                        </a>
+                        <a href="../../src/mapaDeIniciativas/index.html" class="list-decoration-none text-decoration-none fs-6 general_link">
+                            <li>Mapa de Iniciativas</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 d-none d-md-flex flex-column align-items-center my-4">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <img class="logo" src="../../assets/Logo_Roxa.png" alt="LOGO">
+                    <h6 class="text-center">Menina, nem te conto o que temos a oferecer!</h6>
+                </div>
+            </div>
+            <div class="col-6 offset-1 offset-md-0 col-md-4 mt-5 mb-5 mb-md-0">
+                <div class="">
+                    <h4 class="subtitle">Newsletter</h4>
+                    <p class="newslettertext">Participe de nossa Newsletter e fique por dentro de tudo que recomendamos,
+                        para e por nossas freelancers.</p>
+                    <form action="" class="d-flex flex-column align-items-center" id="newsletter">
+                        <input class="w-100 border-bottom border-1 border-dark ps-4 mt-4" style="border: none;"
+                            type="text" placeholder="E-mail">
+                        <button class="mt-5 border-bottom border-2 border-dark-50 bg-transparent w-50" form="newsletter"
+                            style="border: none;" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
