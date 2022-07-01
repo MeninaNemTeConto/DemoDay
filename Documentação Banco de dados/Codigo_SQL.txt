@@ -1,0 +1,127 @@
+-- -----------------USO INTERNO-----------------------------------
+
+CREATE TABLE IF NOT EXISTS newsletter(
+	id_news				INTEGER PRIMARY KEY AUTO_INCREMENT,
+	email				VARCHAR(500) UNIQUE,
+	dt_cadastro			DATE
+);
+
+CREATE TABLE IF NOT EXISTS categorias_cursos(
+	id 				INTEGER PRIMARY KEY,
+	nome_cate			VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS cursos(
+	id				INTEGER PRIMARY KEY,
+	nome_curso			VARCHAR(255) NOT NULL,
+	instituicao			VARCHAR(255) NOT NULL,
+    	valor 				VARCHAR(255) DEFAULT 'GRATUITO',
+    	tipo_formacao			VARCHAR(255) NOT NULL,
+	fk_categorias	INTEGER		
+);
+
+CREATE TABLE IF NOT EXISTS capa_cursos(
+	id 			INTEGER PRIMARY KEY,
+    caminho_ft 	LONGBLOB,
+    fkey_cursos	INTEGER
+);
+
+
+ALTER TABLE CURSOS ADD CONSTRAINT fkey_categorias FOREIGN KEY(fk_categorias) REFERENCES categorias_cursos(id);
+ALTER TABLE capa_cursos ADD CONSTRAINT capa_cursos FOREIGN KEY(fkey_cursos) REFERENCES cursos(id);
+
+-- ---------------------------------USO USUARIO----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS identificacao_geral (
+id 			INTEGER PRIMARY KEY AUTO_INCREMENT,
+nome			VARCHAR(255) NOT NULL,
+sobrenome 		VARCHAR(255) NOT NULL,
+nome_social		VARCHAR(255),    
+cpf			VARCHAR(11) NOT NULL UNIQUE,
+dt_nascimento		DATE NOT NULL,
+telefone		VARCHAR(50) NOT NULL,
+cep			VARCHAR(50) NOT NULL,
+email			VARCHAR(255) UNIQUE NOT NULL,
+senha			VARCHAR(255) NOT NULL,
+dt_cadastro		DATE NOT NULL,
+status			BIT
+);
+
+CREATE TABLE IF NOT EXISTS hist_logins (
+id			INTEGER PRIMARY KEY AUTO_INCREMENT,
+dt_login		DATE NOT NULL,
+fk_iden_login		INTEGER NOT NULL
+);
+
+ALTER TABLE hist_logins ADD CONSTRAINT fkey_login_hist FOREIGN KEY (fk_iden_login) REFERENCES identificacao_geral(id);
+
+CREATE TABLE IF NOT EXISTS fotos_iden_ger(
+id			INTEGER PRIMARY KEY AUTO_INCREMENT,
+caminho_ft		LONGBLOB NOT NULL,
+fk_iden			INTEGER NOT NULL
+);
+
+ALTER TABLE fotos_iden_ger ADD CONSTRAINT fkey_fotos_iden FOREIGN KEY (fk_iden) REFERENCES identificacao_geral(id);
+
+CREATE TABLE IF NOT EXISTS cadastro_freelas(
+id			INTEGER PRIMARY KEY AUTO_INCREMENT,
+mei			VARCHAR(50),
+area_formacao		VARCHAR(255),
+sobremim	VARCHAR(255),
+fk_iden_ger		INTEGER NOT NULL UNIQUE
+);
+
+ALTER TABLE cadastro_freelas ADD CONSTRAINT fkey_cadastro_iden FOREIGN KEY (fk_iden_ger) REFERENCES identificacao_geral(id);
+
+CREATE TABLE fotos_servicos (
+id			INTEGER PRIMARY KEY AUTO_INCREMENT,
+caminho_ft		LONGBLOB NOT NULL,
+data_ft			DATE NOT NULL,
+titulo_ft 		VARCHAR(1000),
+fk_casd_freela		INTEGER NOT NULL
+);
+
+ALTER TABLE fotos_servicos ADD CONSTRAINT fkey_fotos_servicos FOREIGN KEY (fk_casd_freela) REFERENCES cadastro_freelas(id);
+
+CREATE TABLE IF NOT EXISTS certificados(
+id 			INTEGER PRIMARY KEY AUTO_INCREMENT,
+nome_certificado 	VARCHAR(500) NOT NULL,
+fk_freelas 		INTEGER NOT NULL
+);
+
+ALTER TABLE certificados ADD CONSTRAINT fkey_certificados FOREIGN KEY (fk_freelas) REFERENCES cadastro_freelas(id);
+
+CREATE TABLE vagas (
+id 					INTEGER PRIMARY KEY AUTO_INCREMENT,
+titulo_vaga			VARCHAR(2000) NOT NULL,
+dt_postagem 		DATE NOT NULL,
+hr_postagem			DATE NOT NULL,
+descricao			VARCHAR(10000) NOT NULL,
+pagamento 			VARCHAR(255) NOT NULL,
+urgencia 			VARCHAR(255) NOT NULL,
+status 				BINARY DEFAULT 1,
+fk_iden_ger		INTEGER NOT NULL
+);
+
+ALTER TABLE vagas ADD CONSTRAINT fkey_vagas FOREIGN KEY (fk_iden_ger) REFERENCES identificacao_geral(id);
+
+CREATE TABLE fotos_vaga (
+id				INTEGER PRIMARY KEY AUTO_INCREMENT,
+caminho_ft		LONGBLOB NOT NULL,
+fk_vaga			INTEGER NOT NULL
+);
+
+ALTER TABLE fotos_vaga ADD CONSTRAINT fkey_fotos_vagas FOREIGN KEY (fk_vaga) REFERENCES vagas(id);
+
+CREATE TABLE propostas(
+id 				INTEGER PRIMARY KEY AUTO_INCREMENT,
+proposta		NUMERIC(65,2) NOT NULL,
+fk_freelas 		INTEGER NOT NULL,
+fk_vagas		INTEGER NOT NULL
+);
+
+
+ALTER TABLE propostas ADD CONSTRAINT fkey_freelas_propostas FOREIGN KEY (fk_freelas) REFERENCES cadastro_freelas(id);
+ALTER TABLE propostas ADD CONSTRAINT fkey_vagas_propostas FOREIGN KEY (fk_vagas) REFERENCES vagas(id);
+
+
