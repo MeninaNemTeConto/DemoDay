@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="cadastro-contra.css">
+  <title>Cadastro contratante</title>
+</head>
+
+<body>
+
+  <div class="container w-100 bg-white mt-3 rounded shadow" >
+    <div class="row align-items-stretch">
+      <div class="col bg-white  rounded ">
+      
+
+        
+    <div class="row align-items-stretch">
+      
+       
+            <div class="col bg-white p-5 rounded">
+
+              <div class="text-center">
+                <img src="../../assets/Logo_Roxa.png" class="logo" alt="" >
+              </div>
+              <h3 class="fw-bold text-center mb-5">Crie uma conta!</h3>
+            <div class="row g-2">
+
+              <form action="/cadastro/cadastraUser" method="post" class="needs-validation row align-items-stretch" novalidate>
+                <!---EMAIL INPUT-->
+                <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInputGrid" placeholder="#" name="email" required>
+                    <div class="valid-feedback"> </div>
+                    <div class="invalid-feedback"> Digite um Email valido </div>
+                    <label for="floatingInputGrid">Email*</label>
+                </div>
+                </div>
+                <!---EMAIL INPUT-->
+
+                <!---SENHA INPUT-->
+                <div class="col-sm-6">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingInputGrid" placeholder="#" name="senha" required>
+                    <div class="valid-feedback"> </div>
+                    <div class="invalid-feedback"> Digite uma senha valida </div>
+                    <label for="floatingInputGrid">Senha*</label>
+                </div>
+                </div>
+                <!---SENHA INPUT-->
+
+                <!---NOME INPUT-->
+                <div class="col-md-6 ">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="#" name="nome" required>
+                    <div class="valid-feedback"> </div>
+                    <div class="invalid-feedback"> Insira um nome </div>
+                    <label for="floatingInputGrid">Nome*</label>
+                </div>
+                </div>
+                <!---NOME INPUT-->
+
+                <!---SOBRENOME INPUT-->
+                <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="#" name="sobrenome" required>
+                    <div class="valid-feedback"> </div>
+                    <div class="invalid-feedback"> Insira um sobrenome</div>
+                    <label for="floatingInputGrid">Sobrenome*</label>
+                </div>
+                </div>
+                <!---SOBRENOME INPUT-->
+
+                <!---NOME SOCIAL INPUT-->
+                <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" name="nomeSocial" placeholder="#" >
+                    <label for="floatingInputGrid">Nome Social</label>
+                </div>
+                </div>
+                <!---NOME SOCIAL INPUT-->
+
+                <!---CPF INPUT-->
+                  <div class="col-md-6 ">
+                      <div class="form-floating">
+                          <input type="text" class="form-control " id="floatingInputGrid" name="cpf" placeholder="#">
+                          <label for="floatingInputGrid">CPF</label>
+                      </div>
+                  </div>
+                <!---CPF INPUT-->
+
+                <!---DATA DE NASCIMENTO INPUT-->
+                <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="floatingInputGrid" name="dtNascimento" placeholder="#" max="2004-12-31"
+                    required>
+                    <div class="valid-feedback"> </div>
+                    <label for="floatingInputGrid">Data de Nascimento*</label>
+                </div>
+                </div>
+                <!---DATA DE NASCIMENTO INPUT-->
+
+                <!---CELULAR INPUT-->
+                <div class="col-md-6 ">
+                <div class="form-floating">
+                    <input type="tel" class="form-control " name="telefone" id="floatingInputGrid" placeholder="#">
+                    <label for="floatingInputGrid">Celular</label>
+                </div>
+                </div>
+                <!---CELULAR INPUT-->
+
+                <!---CEP INPUT-->
+                <div class="col-md-6">
+                <div class="form-floating">
+                    <input type="number" class="form-control" name="cep" id="floatingInputGrid" placeholder="#" required>
+                    <div class="valid-feedback"> </div>
+                    <div class="invalid-feedback"> insira um CEP valido</div>
+                    <label for="floatingInputGrid">CEP*</label>
+                </div>
+                </div>
+                <!---CEP INPUT-->
+
+                <!---MEI INPUT-->
+              
+                <!---MEI INPUT-->
+            
+                <div class=" text-center  pt-4">
+                  <button type="submit" class="btn btn-light text-center main-btn"> Entrar</button>
+              </div>
+            
+            </div>
+            
+            <div class="my-3 text-center enter-btn">
+              <span>Já possui uma conta? <a href="login.html">Login</a></span>
+         </div>
+            </div>
+        
+         
+            <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded-end">   
+                             
+             </div>
+               
+
+           
+        </form> 
+        
+    </div>
+  
+    </div>
+  </div>
+ 
+  
+  
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/validation.js">
+  </script>
+</body>
+
+</html>

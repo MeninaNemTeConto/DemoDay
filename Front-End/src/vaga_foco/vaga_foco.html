@@ -1,0 +1,220 @@
+<!-- IDs e Classes para trocar o conteudo por JS -->
+<!-- Título do post - .vagafoco_titulo || Categoria do job - #vagafoco_categoria ||  -->
+<!-- Para as imagens do post - usar a propriedade nth-child para não precisar usar vários ids desnecessários - .carousel-item img.nth-child(nº) {} -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preciso de um conserto de ar condicionado</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/resize.css">
+</head>
+
+<body class="scroll">
+    <!-- NavBar -->
+    <nav class="conteiner col-12 d-flex flex-row justify-content-between align-items-center m-0 my-3 p-3 px-sm-5">
+        <a class="" href="#sidebar" id="hamburguer-menu" data-bs-toggle="offcanvas" role="button"
+            aria-controls="sidebar">
+            <img class="col-sm-1 col-4 general_icon" src="../../assets/menu-hamburguer.png" alt="hamburguer-menu">
+        </a>
+        <a class="" href="" id="logo">
+            <img class="col-sm-2 col-4 logo" src="../../assets/Logo_Roxa.png" alt="Logo">
+        </a>
+        <div class=" d-flex flex-row justify-content-between gap-5 align-items-center">
+            <a href="" id="search-btn" class="d-none d-sm-block search_btn_closed">
+                <img class="col-sm-2 general_icon" src="../../assets/pesquisar.png" alt="Search">
+            </a>
+            <a href="../login/pre-cadastro.html" id="user">
+                <img class="col-sm-1 col-4 general_icon" src="../../assets/usuario.png" alt="user">
+            </a>
+        </div>
+    </nav>
+    <!-- SideBar/Menu Hamburguer -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar_label">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close d-flex ms-auto" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li class="my-3"><a href="../ladingpage/index.html" class="fs-3 general_link">Início</a></li>
+                <!-- Botão com dropdown para secção dos perfis -->
+                <li class="my-3">
+                    <button class="fs-3 general_link border-0 bg-transparent" type="button"
+                        data-bs-target="#perfil_dropdownCollapse" data-bs-toggle="collapse" aria-expanded="false"
+                        aria-controls="perfil_dropdownCollapse">
+                        <span class="dropdown-toggle d-flex flex-row-reverse align-items-center"><span class="ms-3">Perfil</span></span>
+                    </button>
+                    <!-- Submenus do perfil -->
+                    <div class="collapse" id="perfil_dropdownCollapse">
+                        <ul style="list-style-type: none; margin-left: 1rem;">
+                            <li class="my-2"><a href="../../src/perfil_inicio/perfil_inicio.html" class="fs-5 general_link">Home</a></li>
+                            <li class="my-2"><a href="../../src/perfil_projetos/perfil_projetos.html" class="fs-5 general_link">Projetos</a></li>
+                            <li class="my-2"><a href="../../src/perfil_privacidade/perfil_privacidade.html"class="fs-5 general_link">Privacidade</a></li>
+                            <li class="my-2"><a href="../../src/perfil_suporte/perfil_suporte.html" class="fs-5 general_link">Suporte</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="my-3"><a href="../../src/cursos/cursos.html" class="fs-3 general_link">Cursos</a></li>
+                <li class="my-3"><a href="../../src/vagas/vagas.html" class="fs-3 general_link">Vagas</a></li>
+                <li class="my-3"><a href="../mapaDeIniciativas/index.html" class="fs-3 general_link">Mapa de Iniciativas</a></li>
+            </ul>
+            <hr style="margin-top: 95%;">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html" class="general_link">Termos de
+                        Uso</a></li>
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html " class="general_link">Políticas
+                        de Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Job Card -->
+    <div class="content d-flex justify-content-center my-5">
+        <div class="border border-3 rounded-4 col-12 col-md-8 p-2 p-sm-3">
+            <!-- Job Breadcrumb -->
+            <nav class="row ms-5" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="general_link" href="../../src/vagas/vagas.html">Vagas</a></li>
+                    <li class="breadcrumb-item"><a class="general_link" href="#" id="vagafoco_categoria">TI e Suporte</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><span class="vagafoco_titulo">Preciso de um conserto de ar condicionado</span></li>
+                </ol>
+            </nav>
+            <!-- Job Title -->
+            <div class="row text-center my-5">
+                <h1 class="vagafoco_titulo">Preciso De Um Conserto De Ar Condicionado</h1>
+            </div>
+            <!-- Job Image -->
+            <div class="row justify-content-center my-5">
+                <div id="jobfocus_image" class="carousel carousel-dark slide col-12 col-md-10" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#jobfocus_image" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#jobfocus_image" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#jobfocus_image" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4">
+                        <div class="carousel-item active">
+                            <img src="../../assets/ar_condicionado_consertar.jpeg" class="d-block col-12" alt="...">
+                        </div>
+                        <!--
+                        <div class="carousel-item">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12" alt="...">
+                        </div>
+                        -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#jobfocus_image" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#jobfocus_image" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <hr>
+            <!-- Info do Post -->
+            <div class="row my-4 mx-5">
+                <p class="subtitle">Postado há <span id="vagafoco_upload" class="text-black text-break">99 Minutos</span>,</p>
+                <p class="subtitle">Por: <span id="vagafoco_autor" class="text-black text-break">Marcelo Gonçalves Da Silva</span></p>
+            </div>
+            <hr>
+            <!-- Descrição do Job -->
+            <div class="row my-4 mx-2 mx-lg-5 px-lg-5 fs-5">
+                <p>Meu ar condicionado que eu tenho há uns 3 anos pifou depois de ter ficado ligado o dia inteiro. Eu senti um cheiro de queimado quando ele parou de funcionar, mas não vi fumaça alguma. Deixei ele desligado e não mexi mais</p>
+            </div>
+            <hr>
+            <!-- Preferências do Job -->
+            <div class="row my-4 mx-5">
+                <h4>Preferências do Job</h4>
+                <div class="row">
+                    <p class="subtitle">Disponibilidade: <span id="vagafoco_disponibilidade" class="text-black text-break">Fim de Semana(Horário Comercial)</span></p>
+                    <p class="subtitle">Prioridade: <span id="vagafoco_prioridade" class="text-black text-break">Morar Perto</span></p>
+                    <p class="subtitle">Pagamento: <span id="vagafoco_pagamento" class="text-black text-break">R$50,00/Hr</span></p>
+                    <p class="subtitle">Urgência: <span id="vagafoco_urgencia" class="text-black text-break">Alta</span></p>
+                </div>
+            </div>
+            <hr>
+            <!-- Atividade -->
+            <div class="row my-4 mx-5">
+                <h4>Atividade desse Job:</h4>
+                <div class="row">
+                    <p class="subtitle">Vezes visto: <span id="vagafoco_visualizacoes" class="text-break text-black">2</span></p>
+                    <p class="subtitle">Propostas: <span id="vagafoco_propostas" class="text-break text-black">0</span></p>
+                    <p class="subtitle">Última Vez Visto: <span id="vagafoco_vezvisto" class="text-break text-black">3hrs Atrás</span></p>
+                </div>
+            </div>
+            <hr>
+            <!-- Sobre o Cliente -->
+            <div class="row my-4 mx-5">
+                <h4>Sobre o Cliente:</h4>
+                <div class="row">
+                    <p class="subtitle">Última Vez Online: <span id="vagafoco_ultvezonline" class="text-break text-black">14Hrs Atrás</span></p>
+                    <p class="subtitle">Mora em: <span id="vagafoco_moraem" class="text-break text-black">São Paulo - SP</span></p>
+                    <p class="subtitle">Jobs Postados: <span id="vagafoco_jobspostados" class="text-break text-black">4</span></p>
+                    <p class="subtitle">Número para Contato: <span id="vagafoco_numcliente" class="text-break text-black">+55 (11) 99786-4976</span></p>
+                    <p class="subtitle">Email para Contato: <span id="vagafoco_emailcliente" class="text-break text-black">marcelo123.golcalves@hotmail.com</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="conteiner col-12 d-flex flex-row justify-content-around align-items-center my-5">
+        <div class="row d-flex flex-column flex-md-row align-items-center">
+            <div class="col-6 col-md-4 offset-1 offset-md-0">
+                <div class="">
+                    <h4 class="subtitle">Links Rápidos: </h4>
+                    <ul class="" id="footerlinks">
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Termos de Uso</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Políticas de Privacidade</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/vagas/vagas.html">
+                            <li>Encontre Trabalho</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/cursos/cursos.html">
+                            <li>Cursos</li>
+                        </a>
+                        <a href="../../src/mapaDeIniciativas/index.html" class="list-decoration-none text-decoration-none fs-6 general_link">
+                            <li>Mapa de Iniciativas</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 d-none d-md-flex flex-column align-items-center my-4">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <img class="logo" src="../../assets/Logo_Roxa.png" alt="LOGO">
+                    <h6 class="text-center">Menina, nem te conto o que temos a oferecer!</h6>
+                </div>
+            </div>
+            <div class="col-6 offset-1 offset-md-0 col-md-4 mt-5 mb-5 mb-md-0">
+                <div class="">
+                    <h4 class="subtitle">Newsletter</h4>
+                    <p class="newslettertext">Participe de nossa Newsletter e fique por dentro de tudo que recomendamos,
+                        para e por nossas freelancers.</p>
+                    <form action="" class="d-flex flex-column align-items-center" id="newsletter">
+                        <input class="w-100 border-bottom border-1 border-dark ps-4 mt-4" style="border: none;"
+                            type="text" placeholder="E-mail">
+                        <button class="mt-5 border-bottom border-2 border-dark-50 bg-transparent w-50" form="newsletter"
+                            style="border: none;" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

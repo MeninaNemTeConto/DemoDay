@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Recomendados</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/resize.css">
+</head>
+
+<body class="scroll mx-sm-5">
+    <!-- NavBar -->
+    <nav class="conteiner col-12 d-flex flex-row justify-content-between align-items-center m-0 my-3 p-3 px-sm-5">
+        <a class="" href="#sidebar" id="hamburguer-menu" data-bs-toggle="offcanvas" role="button"
+            aria-controls="sidebar">
+            <img class="col-sm-1 col-4 general_icon" src="../../assets/menu-hamburguer.png" alt="hamburguer-menu">
+        </a>
+        <a class="" href="" id="logo">
+            <img class="col-sm-2 col-4 logo" src="../../assets/Logo_Roxa.png" alt="Logo">
+        </a>
+        <div class=" d-flex flex-row justify-content-between gap-5 align-items-center">
+            <a href="" id="search-btn" class="d-none d-sm-block search_btn_closed">
+                <img class="col-sm-2 general_icon" src="../../assets/pesquisar.png" alt="Search">
+            </a>
+            <a href="../login/pre-cadastro.html" id="user">
+                <img class="col-sm-1 col-4 general_icon" src="../../assets/usuario.png" alt="user">
+            </a>
+        </div>
+    </nav>
+    <!-- SideBar/Menu Hamburguer -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar_label">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close d-flex ms-auto" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li class="my-3"><a href="../ladingpage/index.html" class="fs-3 general_link">Início</a></li>
+                <!-- Botão com dropdown para secção dos perfis -->
+                <li class="my-3">
+                    <button class="fs-3 general_link border-0 bg-transparent" type="button"
+                        data-bs-target="#perfil_dropdownCollapse" data-bs-toggle="collapse" aria-expanded="false"
+                        aria-controls="perfil_dropdownCollapse">
+                        <span class="dropdown-toggle d-flex flex-row-reverse align-items-center"><span class="ms-3">Perfil</span></span>
+                    </button>
+                    <!-- Submenus do perfil -->
+                    <div class="collapse" id="perfil_dropdownCollapse">
+                        <ul style="list-style-type: none; margin-left: 1rem;">
+                            <li class="my-2"><a href="../../src/perfil_inicio/perfil_inicio.html" class="fs-5 general_link">Home</a></li>
+                            <li class="my-2"><a href="../../src/perfil_projetos/perfil_projetos.html" class="fs-5 general_link">Projetos</a></li>
+                            <li class="my-2"><a href="../../src/perfil_privacidade/perfil_privacidade.html"class="fs-5 general_link">Privacidade</a></li>
+                            <li class="my-2"><a href="../../src/perfil_suporte/perfil_suporte.html" class="fs-5 general_link">Suporte</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="my-3"><a href="../../src/cursos/cursos.html" class="fs-3 general_link">Cursos</a></li>
+                <li class="my-3"><a href="../../src/vagas/vagas.html" class="fs-3 general_link">Vagas</a></li>
+                <li class="my-3"><a href="../mapaDeIniciativas/index.html" class="fs-3 general_link">Mapa de Iniciativas</a></li>
+            </ul>
+            <hr style="margin-top: 95%;">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html" class="general_link">Termos de
+                        Uso</a></li>
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html " class="general_link">Políticas
+                        de Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Content division -->
+    <div class="conteiner my-5">    
+        <div class="row justify-content-center align-items-center align-items-lg-start d-flex flex-column flex-lg-row">
+            <!-- Filtros - Responsivo -->
+            <form action="" method="" class="col-3 col-sm-2 col-md-1 d-block d-lg-none my-5 ">
+                <button class="bg-transparent border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter_offcanvas" aria-controls="filter_offcanvas" >
+                    <img class="" src="../../assets/filtro.png" alt="filtro">
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="filter_offcanvas" aria-labelledby="filter_offcanvasLabel">
+                    <div class="offcanvas-header mt-5">
+                        <h4 class="offcanvas-title ms-4" id="filter_offcanvasLabel">Filtrar:</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body mt-5">
+                        <p>Aplicado: <span id="added_filter"></span></p>
+                        <form action="" method="" id="couses_filterresponsive" class="row d-flex flex-column">
+                            <!-- Categorias -->
+                            <h4 class="subtitle">Categorias:</h4>
+                            <div>
+                                <input id="categoria_culinaria" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_culinaria">Culinária</label>
+                            </div>
+                            <div>
+                                <input id="categoria_mecanica" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_mecanica">Mecânica</label>
+                            </div>
+                            <div>
+                                <input id="categoria_ti" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_ti">Tecnologia da Informação</label>
+                            </div>
+                            <div>
+                                <input id="categoria_musica" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_musica">Música</label>
+                            </div>
+                            <div>
+                                <input id="categoria_artesanato" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_artesanato">Artesanato</label>
+                            </div>
+                            <div>
+                                <input id="categoria_eletrica" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_eletrica">Elétrica</label>
+                            </div>
+                            <div>
+                                <input id="categoria_empresarial" type="checkbox" class="fs-5 ms-3 my-3" form="couses_filterresponsive">
+                                <label for="categoria_empresarial">Serviços Empresariais</label>
+                            </div>
+                            <!-- Formação -->
+                            <h4 class="subtitle">Formação:</h4>
+                            <div>
+                                <input type="checkbox" id="formation_vocational" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="formation_vocational">Profissionalizante</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="formation_technical" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="formation_technical">Técnico</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="formation_bachelor" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="formation_bachelor">Bacharelado</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="formation_posgrad" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="formation_posgrad">Pós-Graduação</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="formation_presencial" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="formation_presencial">Presencial</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="formation_ead" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="formation_ead">EaD</label>
+                            </div>
+                            <!-- Pagamento -->
+                            <h4 class="subtitle">Pagamento:</h4>
+                            <div>
+                                <input type="checkbox" id="payment_gratuito" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="payment_gratuito">Gratuito</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="payment_pago" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="payment_pago">Pago</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="payment_bolsa" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="payment_bolsa">Bolsa</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="payment_ppe" class="fs-5 ms-3 my-3" form="courses_filterresponsive">
+                                <label for="payment_ppe">Plano de Pagamento Estendido</label>
+                            </div>
+                            <div class="row d-flex position-sticky bottom-0 justify-content-center align-items-center">
+                                <button class="col-8 bg-transparent border-0 rounded-pill px-5 py-3" style="background-color: #7936FC !important; color: #ffffff;">Aplicar Filtros</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </form>
+            <!-- left section -->
+            <div class="row col-4 h-100 d-none d-lg-flex mt-4">
+                <form class="row d-flex flex-row gap-0 my-5" action="" id="searchinput">
+                    <input class="col-lg-10 search_btn_input" type="text" placeholder="Encontre um Curso">
+                    <button form="searchinput" class="col-lg-2 search_btn_open" type="submit">
+                        <img class="col-12" src="../../assets/pesquisar-branco.png" alt="Pesquisar">
+                    </button>
+                </form>
+                <div class="col-lg-12 row border border-3 rounded rounded-4 my-3 p-5">
+                    <!-- Filtros -->
+                    <div class="col-lg-6 d-flex flex-rows gap-2 text-black-50">
+                        <p>Aplicado: </p>
+                        <p id="appliedfilter">x</p>
+                    </div>
+                    <h2 class="subtitle h1 my-4">Categorias</h2>
+                    <form class="row justify-content-start" action="" id="category">
+                        <button form="category" value="culinaria" type="submit" class="border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/culinaria.png"  alt="culinária_img">
+                            <p>CULINÁRIA</p>
+                        </button>
+                        <button form="category" value="mecanica" type="submit" 
+                        class="border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/mecanica.png"  alt="mecânica_img">
+                            <p class="d-flex align-items-center fs-6">MECÂNICA</p>
+                        </button>
+                        <button form="category" value="tec-info" type="submit" 
+                        class="text-start border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/tec-info.png"  alt="tecnologiadainformação_img">
+                            <p class="d-flex align-items-center fs-6">TECNOLOGIA DA INFORMAÇÃO</p>
+                        </button>
+                        <button form="category" value="musica" type="submit" 
+                        class="border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/musica.png" al t="música_img">
+                            <p class="d-flex align-items-center fs-6">MÚSICA</p>
+                        </button>
+                        <button form="category" value="artesanato" type="submit" 
+                        class="border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/artesanato.png " alt="artesanato_img">
+                            <p class="d-flex align-items-center fs-6">ARTESANATO</p>
+                        </button>
+                        <button form="category" value="eletrica" type="submit" 
+                        class="border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/elétrica.png"  alt="elétrica_img">
+                            <p class="d-flex align-items-center fs-6">ELÉTRICA</p>
+                        </button>
+                        <button form="category" value="servicos-empresariais" type="submit" 
+                        class="border-0 bg-white d-flex flex-row my-3">
+                            <img class="general_icon me-4" src="../../assets/serviços-empresariais.png" alt="serviçosempresariais_img">
+                            <p class="fs-6">SERVIÇOS EMPRESARIAIS</p>
+                        </button>
+                    </form>
+                    <h2 class="subtitle h1 my-4">Formação</h2>
+                    <form class="d-flex flex-column align-items-start ms-4" action="" id="coursetype">
+                        <button form="coursetype" value="profissionalizante" 
+                        class="fs-6 border-0 bg-white my-2 pe-auto">PROFISSIONALIZANTE</button>
+                        <button form="coursetype" value="tecnico" 
+                        class="fs-6 border-0 bg-white my-2 pe-auto">TÉCNICO</button>
+                        <button form="coursetype" value="bacharelado" 
+                        class="fs-6 border-0 bg-white my-2 pe-auto">BACHARELADO</button>
+                        <button form="coursetype" value="pos-grad" 
+                        class="fs-6 border-0 bg-white my-2 pe-auto">PÓS-GRADUAÇÃO</button>
+                        <button form="coursetype" value="presencial" 
+                        class="fs-6 border-0 bg-white my-2 pe-auto">PRESENCIAL</button>
+                        <button form="coursetype" value="ead" 
+                        class="fs-6 border-0 bg-white my-2 pe-auto">EAD</button>
+                    </form>
+                    <h2 class="subtitle h1 my-4">Pagamento</h2>
+                    <form class="d-flex flex-column align-items-start ms-4" action="" id="price">
+                        <button form="price" class="fs-6 border-0 bg-white my-2 pe-auto">GRATUITO</button>
+                        <button form="price" class="fs-6 border-0 bg-white my-2 pe-auto">PAGO</button>
+                        <button form="price" class="fs-6 border-0 bg-white my-2 pe-auto">BOLSA</button>
+                        <button form="price" class="fs-6 border-0 bg-white my-2 pe-auto text-start">PLANO DE PAGAMENTO ESTENDIDO</button>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Right Section -->
+            <div class="row col-lg-8 col-10 ms-md-4">
+                <div class="">
+                    <form id="order_btn" class="row mb-5" action="">
+                        <div class="row accordion accordion-flush d-flex flex-row justify-content-start">
+                            <label for="col-sm-10 col-md-8 col-lg-4 orderby" class="d-flex justify-content-start fs-5 subtitle">Ordenar por:</label>
+                            <div class="col-sm-10 col-md-8 col-lg-4 accordion-item border border-2 rounded rounded-4 py-2 px-auto mt-5">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button name="orderby" class="orderby accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"></button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <button id="order_btn" type="submit" class="d-flex align-items-center justify-content-center border-top accordion-body border-0 bg-transparent w-100">Data de Início</button>
+                                </div>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <button id="order_btn" type="submit" class="d-flex align-items-center justify-content-center border-top accordion-body border-0 bg-transparent w-100">Alunos Inscritos</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Carousel_1 -->
+                    <div id="carousel_1" class="carousel carousel-dark slide my-5" data-bs-ride="carousel">
+                        <h2 class="my-5 m-lg-5 subtitle" id="course_filter_title">Para Novas Usuárias:</h2>
+                        <div class="carousel-inner px-sm-5 px-0 my-5">
+                            <!-- Caroussel 1 -->
+                            <div class="carousel-item active" data-bs-interval="15000">
+                                <div class="d-flex flex-column flex-sm-row justify-content-around align-items-start">
+                                    <!-- Curso 1 -->
+                                    <a href="https://lps.exame.com/wep2turma" target="_blank" class="text-decoration-none my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center col-3">
+                                        <img class="course_img rounded-top mb-3 w-100" style="height: 7rem; object-fit: cover;" src="../../assets/courses_img/wep_course.png" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Woman Empowerment Program (WEP)</h3>
+                                        <p class="d-flex text-center text-black-50">EXAME academy & Fin4She</p>
+                                    </a>
+                                    <!-- Curso 2 -->
+                                    <a href="https://www.pepsico.com.br/imprensa/histórias/mulheres-com-propósito" target="_blank" class="text-decoration-none my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center col-3">
+                                        <img class="course_img rounded-top mb-3 w-100" style="height: 7rem; object-fit: cover;" src="../../assets/courses_img/mulheres_com_proposito.jpg" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Programa Mulheres com Propósito</h3>
+                                        <p class="d-flex text-center text-black-50">PepsiCo & Fundes América Latina</p>
+                                    </a>
+                                    <!-- Curso 3 -->
+                                    <a href="https://empreendeai.com.br/institutoccr-empreendedoras/" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem; object-fit: cover;" src="../../assets/courses_img/despertando_a_empreendedora.jpg" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Despertando a Empreendedora</h3>
+                                        <p class="d-flex text-center text-black-50">Empreende aí & Grupo CCR</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Caroussel 2 -->
+                            <div class="carousel-item" data-bs-interval="15000">
+                                <div class="d-flex flex-column flex-sm-row justify-content-around align-items-center">
+                                    <a href="https://www.gov.br/mdh/pt-br/navegue-por-temas/politicas-para-mulheres/acoes-e-programas/qualifica-mulher" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem;" src="../../assets/courses_img/projeto_qualifica_mulher.png" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Projeto Qualifica Mulher</h3>
+                                        <p class="d-flex text-center text-black-50">Associação Aliança Empreendedora & Secretaria Nacional de Políticas para as Mulheres</p>
+                                    </a>
+                                    <a href="https://www.dio.me/bootcamp/banco-carrefour-woman-developer?utm_source=pr-bc-banco-carrefour-woman-dev&utm_medium=pay&utm_campaign=carrefour" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem;" src="../../assets/courses_img/carrefour_woman_developer.webp" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Bootcamp Banco Carrefour Woman Developer</h3>
+                                        <p class="d-flex text-center text-black-50">Banco Carrefour</p>
+                                    </a>
+                                    <a href="https://treinamentoscresca.withgoogle.com/events/mulheres-pretas" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem;" src="../../assets/courses_img/cresca_google.jpg" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Cresça com o Google para Mulheres Pretas</h3>
+                                        <p class="d-flex text-center text-black-50">Google</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Caroussel 3 -->
+                            <div class="carousel-item" data-bs-interval="15000">
+                                <div class="d-flex flex-column flex-sm-row justify-content-around align-items-center">
+                                    <a href="https://jabrasil.org.br/institutoccr-elasnatech/" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem;" src="../../assets/courses_img/elas_na_tech.jpeg" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Elas na Tech</h3>
+                                        <p class="d-flex text-center text-black-50">JA Brasil & Grupo CCR</p>
+                                    </a>
+                                    <a href="https://www.hershe.me" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem;" src="../../assets/courses_img/HerShe.jpg" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Her She</h3>
+                                        <p class="d-flex text-center text-black-50">Hershey's & Plano Feminino</p>
+                                    </a>
+                                    <a href="https://meninasprogramadoras.icmc.usp.br/inicio" target="_blank" class="text-decoration-none col-3 my-2 my-sm-5 d-flex flex-column align-items-center border border-2 rounded rounded-3 mx-3 text-center">
+                                        <img class="course_img rounded-top w-100 mb-3" style="height: 7rem;" src="../../assets/courses_img/meninas_programadoras.jpg" alt="foto de bolo">
+                                        <h3 class="d-flex h6 subtitle">Meninas Programadoras</h3>
+                                        <p class="d-flex text-center text-black-50">USP</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators" style="margin-bottom: 0.5rem;">
+                            <button type="button" data-bs-target="#carousel_1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel_1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carousel_1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <button class="carousel-control-prev" style="margin-left: -2rem;" type="button" data-bs-target="#carousel_1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" style="margin-right: -2rem;" type="button" data-bs-target="#carousel_1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="conteiner col-12 d-flex flex-row justify-content-around align-items-center my-5">
+        <div class="row d-flex flex-column flex-md-row align-items-center">
+            <div class="col-6 col-md-4 offset-1 offset-md-0">
+                <div class="">
+                    <h4 class="subtitle">Links Rápidos: </h4>
+                    <ul class="" id="footerlinks">
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Termos de Uso</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Políticas de Privacidade</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/vagas/vagas.html">
+                            <li>Encontre Trabalho</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/cursos/cursos.html">
+                            <li>Cursos</li>
+                        </a>
+                        <a href="../../src/mapaDeIniciativas/index.html" class="list-decoration-none text-decoration-none fs-6 general_link">
+                            <li>Mapa de Iniciativas</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 d-none d-md-flex flex-column align-items-center my-4">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <img class="logo" src="../../assets/Logo_Roxa.png" alt="LOGO">
+                    <h6 class="text-center">Menina, nem te conto o que temos a oferecer!</h6>
+                </div>
+            </div>
+            <div class="col-6 offset-1 offset-md-0 col-md-4 mt-5 mb-5 mb-md-0">
+                <div class="">
+                    <h4 class="subtitle">Newsletter</h4>
+                    <p class="newslettertext">Participe de nossa Newsletter e fique por dentro de tudo que recomendamos,
+                        para e por nossas freelancers.</p>
+                    <form action="" class="d-flex flex-column align-items-center" id="newsletter">
+                        <input class="w-100 border-bottom border-1 border-dark ps-4 mt-4" style="border: none;"
+                            type="text" placeholder="E-mail">
+                        <button class="mt-5 border-bottom border-2 border-dark-50 bg-transparent w-50" form="newsletter"
+                            style="border: none;" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

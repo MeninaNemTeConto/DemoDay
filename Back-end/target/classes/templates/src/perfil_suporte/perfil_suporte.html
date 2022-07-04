@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Suporte</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/resize.css">
+</head>
+
+<body class="scroll">
+    <!-- NavBar -->
+    <nav class="conteiner col-12 d-flex flex-row justify-content-between align-items-center m-0 my-3 p-3 px-sm-5">
+        <a class="" href="#sidebar" id="hamburguer-menu" data-bs-toggle="offcanvas" role="button"
+            aria-controls="sidebar">
+            <img class="col-sm-1 col-4 general_icon" src="../../assets/menu-hamburguer.png" alt="hamburguer-menu">
+        </a>
+        <a class="" href="" id="logo">
+            <img class="col-sm-2 col-4 logo" src="../../assets/Logo_Roxa.png" alt="Logo">
+        </a>
+        <div class=" d-flex flex-row justify-content-between gap-5 align-items-center">
+            <a href="" id="search-btn" class="d-none d-sm-block search_btn_closed">
+                <img class="col-sm-2 general_icon" src="../../assets/pesquisar.png" alt="Search">
+            </a>
+            <a href="../login/pre-cadastro.html" id="user">
+                <img class="col-sm-1 col-4 general_icon" src="../../assets/usuario.png" alt="user">
+            </a>
+        </div>
+    </nav>
+    <!-- SideBar/Menu Hamburguer -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar_label">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close d-flex ms-auto" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li class="my-3"><a href="../ladingpage/index.html" class="fs-3 general_link">Início</a></li>
+                <!-- Botão com dropdown para secção dos perfis -->
+                <li class="my-3">
+                    <button class="fs-3 general_link border-0 bg-transparent" type="button"
+                        data-bs-target="#perfil_dropdownCollapse" data-bs-toggle="collapse" aria-expanded="false"
+                        aria-controls="perfil_dropdownCollapse">
+                        <span class="dropdown-toggle d-flex flex-row-reverse align-items-center"><span class="ms-3">Perfil</span></span>
+                    </button>
+                    <!-- Submenus do perfil -->
+                    <div class="collapse" id="perfil_dropdownCollapse">
+                        <ul style="list-style-type: none; margin-left: 1rem;">
+                            <li class="my-2"><a href="../../src/perfil_inicio/perfil_inicio.html" class="fs-5 general_link">Home</a></li>
+                            <li class="my-2"><a href="../../src/perfil_projetos/perfil_projetos.html" class="fs-5 general_link">Projetos</a></li>
+                            <li class="my-2"><a href="../../src/perfil_privacidade/perfil_privacidade.html"class="fs-5 general_link">Privacidade</a></li>
+                            <li class="my-2"><a href="../../src/perfil_suporte/perfil_suporte.html" class="fs-5 general_link">Suporte</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="my-3"><a href="../../src/cursos/cursos.html" class="fs-3 general_link">Cursos</a></li>
+                <li class="my-3"><a href="../../src/vagas/vagas.html" class="fs-3 general_link">Vagas</a></li>
+                <li class="my-3"><a href="../mapaDeIniciativas/index.html" class="fs-3 general_link">Mapa de Iniciativas</a></li>
+            </ul>
+            <hr style="margin-top: 95%;">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html" class="general_link">Termos de
+                        Uso</a></li>
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html " class="general_link">Políticas
+                        de Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Wrapper dos 2 sections -->
+    <div class="conteiner me-0 me-md-5">
+        <div class="row justify-content-md-between justify-content-center">
+            <div class="row h-100 d-none d-md-flex col-md-4">
+                <a class="d-flex flex-row align-items-center left_nav my-3 text-decoration-none text-black" href="../../src/perfil_inicio/perfil_inicio.html">
+                    <img class="general_icon my-4 ms-4" src="../../assets/home-preto.png" alt="Botão Home">
+                    <p class="fs-5 my-0 ms-4">INÍCIO</p>
+                </a>
+                <a class="d-flex flex-row align-items-center left_nav my-3 text-decoration-none text-black" href="../../src/perfil_projetos/perfil_projetos.html">
+                    <img class="general_icon my-4 ms-4" src="../../assets/projetos-preto.png" alt="Projetos">
+                    <p class="fs-5 my-0 ms-4">PROJETOS</p>
+                </a>
+                <a class="d-flex flex-row align-items-center left_nav my-3 text-decoration-none text-black" href="../../src/perfil_privacidade/perfil_privacidade.html">
+                    <img class="general_icon my-4 ms-4" src="../../assets/privacidade-preto.png" alt="Privacidade">
+                    <p class="fs-5 my-0 ms-4">PRIVACIDADE</p>
+                </a >
+                <a class="d-flex flex-row align-items-center left_nav_selected my-3 text-decoration-none" href="../../src/perfil_suporte/perfil_suporte.html">
+                    <img class="general_icon my-4 ms-4" src="../../assets/suporte-branco.png" alt="Suporte">
+                    <p class="fs-5 my-0 ms-4">SUPORTE</p>
+                </a >
+            </div>
+    
+            <!-- Seção da direita -->
+            <div class="row col-10 col-md-6 col-lg-8 mt-5 justify-content-center">
+                <h2 class="fs-1 ms-4">Bem vindo à nossa página de <strong class="subtitle fs-1 fw-normal">suporte</strong></h2>
+                <p class="fs-5 my-5">Conte-nos o que aconteceu para que assim possamos te atender da melhor maneira possível</p>
+                <h2 class="subtitle fs-3 mb-4 ms-4">Fale conosco</h2>
+                <div class="row d-flex flex-row justify-content-between border border-3 py-5">
+                    <div class="row col-12 col-xl-6 d-flex flex-column justify-content-center align-items-center">
+                        <h3 class="subtitle" style="align-self: start;">Como se encaixa seu problema?</h3>
+                        <form id="problem_type" class="col-8 mt-3 mb-5 align-items-start" action="">
+                            <div class="accordion accordion-flush d-flex flex-row justify-content-end" >
+                                <div class="accordion-item border border-2 rounded rounded-4 py-2 px-auto" style="width: 16rem;">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button name="orderby" class="orderby accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"></button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <button id="problem_type" type="submit" class="d-flex align-items-center justify-content-center border-top accordion-body border-0 bg-transparent w-100">Problemas com a Plataforma</button>
+                                    </div>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <button id="problem_type" type="submit" class="d-flex align-items-center justify-content-center border-top accordion-body border-0 bg-transparent w-100">Problemas com Clientes</button>
+                                    </div>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <button id="problem_type" type="submit" class="d-flex align-items-center justify-content-center border-top accordion-body border-0 bg-transparent w-100">Dúvidas</button>
+                                    </div>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <button id="problem_type" type="submit" class="d-flex align-items-center justify-content-center border-top accordion-body border-0 bg-transparent w-100">Feedbacks</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="fs-4">Descreva nas linhas abaixo seu problemas e iremos entrar em contato:</p>
+                        <form id="feedback" action="" class="row d-flex flex-column justify-content-center align-items-center">
+                            <textarea class="col-12 border border-3" type="text" name="feedback_input" id="feedback_content" required 
+                            style="resize: none; height: 12rem; overflow-y: auto; border: none; background-color: #eeeeee; border-color: #dcdcdc;"></textarea>
+                            <button type="submit" class="col-8 general_button rounded-pill px-4 py-2 my-4" id="send_feedback">ENVIAR</button>
+                        </form>
+                        <p style="align-self: start;">Nosso e-mail para contato: emailexample@example.com</p>
+                    </div>
+                    <div class="col-12 col-xl-4 d-flex flex-column justify-content-start h-100">
+                        <h3 class="subtitle fs-4 mb-5">Como iremos resolver o seu problema?</h3>
+                        <ul>
+                            <li class="fs-5">Lorem</li>
+                            <li class="fs-5">Ipsum</li>
+                            <li class="fs-5">Sit</li>
+                            <li class="fs-5">Dolor</li>
+                            <li class="fs-5">Amet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+    </div>
+    <!-- Footer -->
+    <footer class="conteiner col-12 d-flex flex-row justify-content-around align-items-center my-5">
+        <div class="row d-flex flex-column flex-md-row align-items-center">
+            <div class="col-6 col-md-4 offset-1 offset-md-0">
+                <div class="">
+                    <h4 class="subtitle">Links Rápidos: </h4>
+                    <ul class="" id="footerlinks">
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Termos de Uso</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Políticas de Privacidade</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/vagas/vagas.html">
+                            <li>Encontre Trabalho</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 general_link"
+                            href="../../src/cursos/cursos.html">
+                            <li>Cursos</li>
+                        </a>
+                        <a href="../../src/mapaDeIniciativas/index.html" class="list-decoration-none text-decoration-none fs-6 general_link">
+                            <li>Mapa de Iniciativas</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 d-none d-md-flex flex-column align-items-center my-4">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <img class="logo" src="../../assets/Logo_Roxa.png" alt="LOGO">
+                    <h6 class="text-center">Menina, nem te conto o que temos a oferecer!</h6>
+                </div>
+            </div>
+            <div class="col-6 offset-1 offset-md-0 col-md-4 mt-5 mb-5 mb-md-0">
+                <div class="">
+                    <h4 class="subtitle">Newsletter</h4>
+                    <p class="newslettertext">Participe de nossa Newsletter e fique por dentro de tudo que recomendamos,
+                        para e por nossas freelancers.</p>
+                    <form action="" class="d-flex flex-column align-items-center" id="newsletter">
+                        <input class="w-100 border-bottom border-1 border-dark ps-4 mt-4" style="border: none;"
+                            type="text" placeholder="E-mail">
+                        <button class="mt-5 border-bottom border-2 border-dark-50 bg-transparent w-50" form="newsletter"
+                            style="border: none;" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
